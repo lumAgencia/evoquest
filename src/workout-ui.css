@@ -1,0 +1,565 @@
+/* Edição simples de exercícios */
+.simpleEditCard.editing .flexibleItem {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+  padding: 14px 0;
+}
+
+.exerciseEditFields {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 120px;
+  align-items: end;
+  gap: 10px;
+}
+
+.exerciseEditFields > input,
+.exerciseEditFields label input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  padding: 0 12px;
+  border: 1px solid #326c4b;
+  border-radius: 5px;
+  background: #07150f;
+  color: #fff;
+}
+
+.exerciseEditFields label {
+  display: grid;
+  gap: 5px;
+}
+
+.exerciseEditFields label span {
+  color: #9fc6af;
+  font:
+    700 9px Oxanium,
+    sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.exerciseOrderActions .removeExercise {
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 0 12px;
+  color: #ff9b83;
+  border-color: #7a463e;
+}
+
+.exerciseDefaultWeight {
+  color: var(--arcade-green) !important;
+  margin-top: 3px;
+}
+
+/* Execução de treino compacta e alinhada */
+.execution {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 980px;
+  margin: 18px auto 0;
+  padding: 22px;
+  overflow: hidden;
+  background: #0b2117 !important;
+  color: #fff !important;
+  border: 1px solid #326c4b !important;
+  border-radius: 7px !important;
+  box-shadow: 0 7px 0 #050d0a;
+}
+
+.execution > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.execution > header h2 {
+  margin: 5px 0 0;
+  color: #fff;
+  font:
+    800 25px Oxanium,
+    sans-serif;
+}
+
+.executionProgress {
+  height: 34px;
+  margin: 18px 0 12px;
+  background: #06130d;
+  border: 1px solid #285a40;
+  border-radius: 4px;
+}
+
+.executionProgress i {
+  background: #58ff7830;
+}
+
+.executionProgress span {
+  color: #c6e5d1;
+}
+
+.exerciseStepper {
+  margin: 12px 0 16px;
+}
+
+.execution > article,
+.execution > article.done {
+  display: grid !important;
+  grid-template-columns: minmax(230px, 0.8fr) minmax(360px, 1.5fr) !important;
+  align-items: start !important;
+  gap: 22px !important;
+  min-height: 0 !important;
+  padding: 18px !important;
+  opacity: 1;
+  background: #0d281c;
+  border: 1px solid #2c6245 !important;
+  border-radius: 6px;
+}
+
+.execution > article.done {
+  border-color: var(--arcade-green) !important;
+}
+
+.execution .exerciseInfo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.execution .exerciseInfo > b {
+  color: #fff;
+  font:
+    800 20px Oxanium,
+    sans-serif;
+  line-height: 1.25;
+}
+
+.execution .exerciseInfo > small {
+  color: #a8cbb6;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.execution .exerciseInfo > em {
+  color: var(--arcade-green);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.execution .photoGuide {
+  margin-top: 6px;
+}
+
+.execution .setTracker {
+  grid-column: auto;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.executionFooter {
+  background: #06130d;
+  border: 1px solid #285a40;
+  border-radius: 5px;
+}
+
+@media (max-width: 760px) {
+  .simpleEditCard.editing .flexibleItem,
+  .exerciseEditFields,
+  .execution > article,
+  .execution > article.done {
+    grid-template-columns: 1fr !important;
+  }
+
+  .simpleEditCard.editing .flexibleItem > i {
+    display: none;
+  }
+
+  .exerciseOrderActions .removeExercise {
+    width: 100%;
+  }
+
+  .execution {
+    padding: 14px;
+  }
+
+  .execution > header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .executionHeaderActions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .execution .setTracker header,
+  .execution .setTracker > div {
+    grid-template-columns: 38px minmax(75px, 1fr) minmax(75px, 1fr) 52px;
+    gap: 5px;
+  }
+
+  .executionNavigation,
+  .executionFooter {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+/* Modo Missão: execução arcade funcional */
+.missionMode {
+  position: relative;
+  background:
+    radial-gradient(circle at 85% 5%, rgba(49, 255, 111, 0.1), transparent 30%),
+    #071a12 !important;
+}
+
+.missionHud {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 16px 18px 14px;
+  overflow: hidden;
+  background: #05110c;
+  border: 1px solid #43e973;
+  border-radius: 7px;
+  box-shadow: inset 0 0 24px rgba(49, 255, 111, 0.06), 0 4px 0 #020806;
+}
+
+.missionHud::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 95px;
+  height: 95px;
+  content: "";
+  background: linear-gradient(135deg, transparent 50%, rgba(49, 255, 111, 0.07) 50%);
+  pointer-events: none;
+}
+
+.missionHudTitle {
+  display: grid;
+  gap: 3px;
+}
+
+.missionHudTitle span,
+.exerciseMissionStatus span,
+.restMission > small {
+  color: #ff9b3d;
+  font: 800 9px Oxanium, sans-serif;
+  letter-spacing: 1.4px;
+}
+
+.missionHudTitle b {
+  font: 800 17px Oxanium, sans-serif;
+}
+
+.missionStats {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  z-index: 1;
+  display: flex;
+  gap: 8px;
+}
+
+.missionStats p {
+  display: grid;
+  min-width: 72px;
+  margin: 0;
+  padding: 7px 9px;
+  text-align: center;
+  background: #0b281a;
+  border: 1px solid #286c44;
+  border-radius: 5px;
+}
+
+.missionStats small {
+  color: #88b89a;
+  font: 700 7px Oxanium, sans-serif;
+  letter-spacing: 0.8px;
+}
+
+.missionStats b {
+  color: #4fff79;
+  font: 900 18px Oxanium, sans-serif;
+}
+
+.missionStats .hotCombo {
+  border-color: #ff9b3d;
+  box-shadow: 0 0 14px rgba(255, 155, 61, 0.25);
+  animation: missionCombo 0.8s ease-in-out infinite alternate;
+}
+
+.missionStats .hotCombo b {
+  color: #ffb059;
+}
+
+.missionBar {
+  height: 12px;
+  margin-top: 14px;
+  overflow: hidden;
+  background: #10261a;
+  border: 1px solid #2b6243;
+  border-radius: 3px;
+}
+
+.missionBar i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #19c85b, #61ff80);
+  box-shadow: 0 0 12px #31ff6f;
+  transition: width 0.35s ease;
+}
+
+.missionSetCount {
+  display: block;
+  margin-top: 6px;
+  color: #91baa0;
+  font-size: 10px;
+}
+
+.exerciseMissionStatus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 5px 0;
+  padding: 9px 10px;
+  background: #06150e;
+  border-left: 3px solid #31ff6f;
+}
+
+.exerciseMissionStatus b {
+  color: #fff;
+  font: 800 12px Oxanium, sans-serif;
+}
+
+.restMission {
+  min-width: 210px;
+  box-shadow: inset 0 0 18px rgba(49, 255, 111, 0.08);
+}
+
+.restMission.ending {
+  border-color: #ff9b3d;
+  animation: restEnding 0.55s ease-in-out infinite alternate;
+}
+
+.missionMode.setFlash .missionHud {
+  animation: setCompleted 0.5s ease;
+}
+
+.workoutSummary > div {
+  grid-template-columns: repeat(3, minmax(110px, 1fr));
+}
+
+@keyframes setCompleted {
+  50% { box-shadow: inset 0 0 35px rgba(49, 255, 111, 0.24), 0 0 18px rgba(49, 255, 111, 0.2); }
+}
+
+@keyframes missionCombo {
+  to { transform: translateY(-2px); }
+}
+
+@keyframes restEnding {
+  to { box-shadow: inset 0 0 22px rgba(255, 155, 61, 0.2), 0 0 10px rgba(255, 155, 61, 0.18); }
+}
+
+@media (max-width: 760px) {
+  .missionHud {
+    padding-top: 14px;
+  }
+
+  .missionStats {
+    position: static;
+    margin-top: 12px;
+  }
+
+  .missionStats p {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .workoutSummary > div {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
+}
+
+/* Barra de modelos e biblioteca do personal */
+.trainerTemplateBar {
+  display: grid !important;
+  grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) 170px !important;
+  align-items: end !important;
+  gap: 12px !important;
+}
+
+.trainerTemplateBar label {
+  display: grid !important;
+  gap: 6px !important;
+  min-width: 0;
+  color: #9fc6af;
+  font:
+    700 9px Oxanium,
+    sans-serif;
+}
+
+.trainerTemplateBar label select,
+.trainerTemplateBar label input,
+.trainerTemplateBar > button {
+  box-sizing: border-box;
+  width: 100% !important;
+  height: 46px !important;
+  min-height: 46px !important;
+  margin: 0 !important;
+}
+
+.trainerTemplateBar > button {
+  justify-content: center;
+  padding: 0 14px !important;
+}
+
+.trainerExerciseLibrary {
+  margin: 16px 0;
+  padding: 16px;
+  background: #091c14;
+  border: 1px solid #2b6044;
+  border-radius: 6px;
+}
+
+.trainerLibraryHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.trainerLibraryHeading span {
+  color: var(--arcade-green);
+  font:
+    700 8px Oxanium,
+    sans-serif;
+  letter-spacing: 1px;
+}
+
+.trainerLibraryHeading h3 {
+  margin: 4px 0 0;
+  color: #fff;
+}
+
+.trainerLibraryHeading small {
+  max-width: 340px;
+  color: #91b5a1;
+}
+
+.trainerLibraryControls {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  padding: 0 !important;
+  margin-bottom: 12px !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.trainerLibraryControls > select,
+.trainerLibraryControls > .searchControl {
+  box-sizing: border-box;
+  width: 100% !important;
+  height: 46px !important;
+  min-height: 46px !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  background: #06130d !important;
+  color: #fff !important;
+  border: 1px solid #326c4b !important;
+  border-radius: 5px !important;
+}
+
+.trainerLibraryControls > select {
+  padding: 0 12px;
+}
+
+.trainerExerciseResults {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.trainerExerciseResults > button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  min-height: 54px;
+  padding: 9px 11px;
+  text-align: left;
+  background: #10271c;
+  color: #fff;
+  border: 1px solid #2e6447;
+  border-radius: 5px;
+}
+
+.trainerExerciseResults > button:hover {
+  border-color: var(--arcade-green);
+  background: #153725;
+}
+
+.trainerExerciseResults svg {
+  width: 17px;
+  flex: 0 0 17px;
+  color: var(--arcade-green);
+}
+
+.trainerExerciseResults span {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.trainerExerciseResults b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trainerExerciseResults small {
+  color: #91b5a1;
+  font-size: 9px;
+}
+
+.workspacePanel.trainerWorkoutEditor > article > div:not(.workoutMeta) {
+  grid-template-columns: minmax(180px, 1fr) 135px minmax(220px, 1.25fr) auto;
+  align-items: center;
+}
+
+.workspacePanel.trainerWorkoutEditor > article > div:not(.workoutMeta) > input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  min-width: 0;
+}
+
+.workspacePanel.trainerWorkoutEditor
+  > article
+  > div:not(.workoutMeta)
+  > button {
+  min-height: 44px;
+  padding: 0 12px;
+}
+
+@media (max-width: 760px) {
+  .trainerTemplateBar,
+  .trainerLibraryControls,
+  .trainerExerciseResults,
+  .workspacePanel.trainerWorkoutEditor > article > div:not(.workoutMeta) {
+    grid-template-columns: 1fr !important;
+  }
+
+  .trainerLibraryHeading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

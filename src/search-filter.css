@@ -1,0 +1,79 @@
+/*
+ * Controles globais de busca e filtro.
+ * Este arquivo é carregado depois do tema para impedir que estilos legados
+ * voltem a comprimir a busca ou expandir o filtro.
+ */
+.searchFilterBar.workoutLibraryBar,
+.searchFilterBar.studentFilters {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.searchFilterBar.workoutLibraryBar > .searchControl,
+.searchFilterBar.studentFilters > .searchControl,
+.searchFilterBar.workoutLibraryBar > .filterControl,
+.searchFilterBar.studentFilters > .filterControl {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 46px !important;
+  min-height: 46px !important;
+  margin: 0 !important;
+  border: 1px solid #326c4b !important;
+  border-radius: 5px !important;
+  background: #06130d !important;
+  color: #fff !important;
+}
+
+.searchFilterBar > .searchControl {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 13px !important;
+  gap: 10px !important;
+}
+
+.searchFilterBar > .searchControl > svg {
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  flex: 0 0 18px !important;
+}
+
+.searchFilterBar > .searchControl > input {
+  display: block !important;
+  flex: 1 1 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: 44px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  color: #fff !important;
+}
+
+.searchFilterBar > .filterControl {
+  padding: 0 13px !important;
+}
+
+.searchFilterBar.workoutLibraryBar > button {
+  grid-column: 1 / -1;
+  justify-self: end;
+  width: 150px;
+  min-height: 46px;
+}
+
+@media (max-width: 600px) {
+  .searchFilterBar.workoutLibraryBar,
+  .searchFilterBar.studentFilters {
+    grid-template-columns: 1fr !important;
+  }
+
+  .searchFilterBar.workoutLibraryBar > button {
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100%;
+  }
+}

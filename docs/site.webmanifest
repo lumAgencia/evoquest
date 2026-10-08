@@ -1,0 +1,23 @@
+{
+  "name": "EVOQUEST",
+  "short_name": "EVOQUEST",
+  "description": "Treinos, alimentação e progresso em uma jornada fitness gamificada.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#08051b",
+  "theme_color": "#08051b",
+  "icons": [
+    {
+      "src": "./evoquest-favicon-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "./branding/evoquest-app-icon.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "scope": "./"
+}
