@@ -28,7 +28,7 @@ Para atualizar, gere novamente `docs/` e envie as alterações ao repositório.
 
 ## Supabase
 
-O arquivo original contém apenas `.env.example`, sem credenciais de conexão. Sem configurar `VITE_SUPABASE_URL` e `VITE_SUPABASE_PUBLISHABLE_KEY` antes do build, a página inicial abre, mas cadastro, login e dados do aluno não funcionam.
+A publicação usa a URL e a chave pública do projeto existente em `src/supabase-config.json`. Essas informações são destinadas ao frontend; a proteção dos dados depende da autenticação e das políticas de acesso do Supabase. Variáveis `VITE_SUPABASE_URL` e `VITE_SUPABASE_PUBLISHABLE_KEY` no ambiente de build têm prioridade sobre essa configuração. Nunca coloque chaves secretas ou `service_role` no frontend.
 
 As migrações SQL e a função `delete-account` estão em `supabase/`. Se reutilizar o banco existente, confira o histórico antes de executar migrações. Configure as URLs de autenticação do Supabase para o endereço publicado.
 
